@@ -18,9 +18,13 @@
     <!-- internal-css -->
     <style>
         /* body-formatação */
+        @font-face {
+            font-family: 'fonts-farro';
+            src: url(../fonts/Farro/Farro-Light.ttf);
+        }
         body{
             background-color: #e1e4d1;
-            font-family: 'Trebuchet MS', 'Helvetica', sans-serif;
+            font-family: 'fonts-farro';
         }
 
     </style>
@@ -35,18 +39,15 @@
                 <form class="p-4 p-md-5 border rounded-3">
                     <img src="../public/img/gem-png.png" class="w-100 img-fluid">
                 <div class="form-floating mb-2">
-                    <h5>Digite seu email</h5>
-                    <input type="email" class="form-control" id="inputEmail" >
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Digite seu email" >
                     <!-- <label for="inputEmail">E-mail</label> -->
                 </div>
                 <div class="form-floating mb-2">
-                    <h5>Crie uma senha</h5>
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Crie uma senha">
                     <!-- <label for="inputPassword">Senha</label> -->
                 </div>
                 <div class="form-floating mb-2">
-                    <h5>Confirme sua senha</h5>
-                    <input type="password" class="form-control" id="inputPassword">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Confirme sua senha">
                     <!-- <label for="inputPassword">Senha</label> -->
                 </div>
                 <button class="w-100 btn btn-lg btn-outline-success" type="submit">Cadastrar</button>

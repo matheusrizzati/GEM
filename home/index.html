@@ -15,8 +15,19 @@
     <link rel="stylesheet" href="CSS/style.css">
     <title>GEM - home</title>
     <style>
+      @font-face {
+        font-family: 'fonts-farro';
+        src: url(../fonts/Farro/Farro-Light.ttf);
+      }
       body{
-        font-family: 'Trebuchet MS', 'Helvetica', sans-serif;
+        font-family: 'fonts-farro';
+      }
+      #home{
+        background: #B5C493;
+        color: white;
+      }
+      #home h1{
+        color: #0B420E;
       }
     </style>
   </head>
@@ -25,7 +36,7 @@
       <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #B5C493;">
         <div class="container">
           <a href="#" class="navbar-brand">
-            <img src="img/gem-final.png" width="100">
+            <img src="../public/img/gem-final.png" width="100">
           </a>
 
           <button class="navbar-toggler" data-toggle="collapse" data-target="#nav-principal">
@@ -44,7 +55,7 @@
                 <a href="" class="nav-link">Sobre</a>
               </li>
               <li class="nav-item">
-                <a href="" class="btn btn-outline-light w-100 ml-3">Entrar</a>
+                <a href="../login/index.html" class="btn btn-outline-light w-100 ml-3">Entrar</a>
               </li>
             </ul>
           </div>
@@ -53,6 +64,25 @@
 
       </nav>
     </head><!--Fim cabeçalho-->
+
+    <section id="home"><!--inicio da seção-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 d-flex"><!--Textos das seção-->
+            <div class="align-self-center">
+              <h1 class="display-4">Cuide do seu negocio</h1>
+              <p>Venha fazer parte da nossa 
+                plataforma</p>
+                <a href="../cadastro/index.html" class="btn btn-outline-success">Cadastre-se</a>
+            </div>
+          </div><!--final de textos da sção-->
+          <div class="col-md-6 d-none d-md-block">
+            <img src="../public/img/empresario.png" width="700" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!--Final da seção-->
 
     <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

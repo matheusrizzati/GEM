@@ -23,9 +23,13 @@
             color: #fff;
         }
         /* body-formatação */
+        @font-face {
+            font-family: 'fonts-farro';
+            src: url(../fonts/Farro/Farro-Light.ttf);
+        }
         body{
             background-color: #e1e4d1;
-            font-family: 'Trebuchet MS', 'Helvetica', sans-serif;
+            font-family: 'fonts-farro';
         }
 
     </style>
@@ -55,7 +59,7 @@
                 <button class="w-100 btn btn-lg btn-outline-success" type="submit">Entrar</button>
                 <div id="criar-conta">
                 <label>Sem conta?</label>
-                <a href="cadastro.html">crie uma</a>
+                <a href="../cadastro/index.html">crie uma</a>
                 </div>
                 </form>
             </div>
