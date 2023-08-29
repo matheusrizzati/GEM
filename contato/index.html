@@ -73,18 +73,21 @@
     <div class="container mt-4" id="tela-login">
         <div class="row align-itens-center">
             <div class="col-md-10 mx-auto col-lg-5">
-                <form class="p-4 p-md-5 border rounded-3">
+                <form class="p-4 p-md-5 border rounded-3" action="https://api.staticforms.xyz/submit" method="post">
                     <img src="../public/feedback.svg" class="w-100 img-fluid">
                 <div class="form-floating mb-2">
-                    <input type="name" class="form-control" id="inputEmail" placeholder="Digite seu nome" >
+                    <input type="text" name="name" class="form-control" id="inputName" placeholder="Digite seu nome" >
                 </div>
                 <div class="form-floating mb-2">
-                    <input type="email" class="form-control" id="inputPassword" placeholder="Digite seu e-mail">
+                    <input type="email" name="email" class="form-control" id="inputPassword" placeholder="Digite seu e-mail">
                 </div>
                 <div class="form-floating mb-2">
-                    <textarea id="mensagem" rows="3" placeholder="Assunto" class="form-control border"></textarea>
+                    <textarea id="mensagem" name="message" rows="3" placeholder="Assunto" class="form-control border"></textarea>
                 </div>
                 <button class="w-100 btn btn-lg btn-outline-success" type="submit">Enviar</button>
+
+                <input type="hidden" name="accessKey" value="bd1e7332-4245-4725-a134-be5ab3e648de">
+                <input type="hidden" name="redirectTo" value="http://127.0.0.1:5500/contato/index.html">
                 </form>
             </div>
         </div>
