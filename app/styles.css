@@ -1,4 +1,40 @@
 *{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%
+}
+
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+menu{
+    width: 250px;
+    height: 100vh;
+    border: 1px solid red;
+    padding-top: 32px;
+    background-color: #B5C493;
+}
+
+menu h2{
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 2rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+menu h2:hover{
+    background-color: #acbe7c;
+}
+
+main{
+    width: 100%;
 }
