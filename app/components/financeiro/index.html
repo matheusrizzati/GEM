@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEM - Financeiro</title>
+    <link rel="stylesheet" href="./financeiro.css">
+</head>
+<body>
+    <div class="financeiroModal" id="financeiroAddModal">
+        <div class="financeiroModalContainer">
+            <h2>Cadastrar item</h2>
+            <form>
+                <input type="text" placeholder="Valor" id="financeiroValor"/>
+                <input type="text" placeholder="Detalhes" id="financeiroDetalhes"/>
+            </form>
+            <div class="financeiroModalContainerFooter">
+                <button class="addModalCancel">Cancelar</button>
+                <button onclick="handleCreateFinanceiro()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <button id="FMenuButton">+</button>
+    <div style="display: none;"  id="FMenuContainer">
+        <h4 id="FMenuAdd">Adicionar lançamento</h4>
+    </div>
+    <div class="financeiroHeader">
+        <h1>Controle Financeiro</h1>
+        <div class="financeiroOrderByDiv">
+            <h3>Ordenar por:</h3>
+                <select name="orderShow" id="financeiroOrderSelect">
+                    <option value="maisRecente">Mais recente</option>
+                    <option value="maisAntiga">Mais antiga</option>
+                    <option value="esseMes">Esse mês</option>
+                    <option value="essaSemana">Essa semana</option>
+                    <option value="ultimos30">Últimos 30 dias</option>
+                    <option value="essa7">Últimos 7 dias</option>
+                </select>
+        </div>
+    </div>
+    <ul class="financeiroContainer">
+    </ul>
+</body>
+<script src="./financeiro.js"></script>
+</html>

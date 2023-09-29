@@ -1,4 +1,9 @@
-const apiUrl = 'http://localhost:8800'
+const apiUrl = 'https://gem-api.vercel.app'
+
+const token = localStorage.getItem('token')
+if(!token){
+    window.location.href = 'http://localhost:5500/login'
+}
 
 const estoqueContainer = document.querySelector('.estoqueContainer')
 const orderSelect = document.querySelector('#EstoqueOrderSelect')
@@ -8,7 +13,10 @@ const createItemModal = document.querySelector('#estoqueCreateItemModal')
 const importLoteModal = document.querySelector('#estoqueLoteModal')
 
 async function fetchEstoque(){
-    const itens = await fetch(`${apiUrl}/produto`)
+    const itens = await fetch(`${apiUrl}/produto`, 
+    {
+        headers: {'authorization': token}
+    })
     .then(res => res.json())
 
     return itens
@@ -53,6 +61,7 @@ async function loadItens(){
         <h2 class="estoqueItemCount" id="estoqueQuantidade_${itemId}">${itemQuantidade}</h2>
         <h2 id="estoqueMais" onclick="handleAddItem('${itemId}')">+</h2>
         </div>
+        <h2 id="estoqueValor">R$ ${itemValor}</h2>
         <h2 class="item3" onclick="handleDeleteItem('${itemId}')">X</h2>`
         estoqueContainer.append(itemComponent)
     });
@@ -67,6 +76,7 @@ async function handleAddItem(id){
     await fetch(`${apiUrl}/produto/${id}`, {
         method: 'PUT',
         headers:{
+            'authorization': token,
             'Content-Type': 'application/json'
         },
         body:JSON.stringify({
@@ -82,6 +92,7 @@ async function handleRemoveItem(id){
     await fetch(`${apiUrl}/produto/${id}`, {
         method: 'PUT',
         headers:{
+            'authorization': token,
             'Content-Type': 'application/json'
         },
         body:JSON.stringify({
@@ -93,13 +104,11 @@ async function handleRemoveItem(id){
 async function handleDeleteItem(id){
     const item = document.getElementById(id).remove()
     await fetch(`${apiUrl}/produto/${id}`, {
-        method: 'POST',
+        method: 'DELETE',
         headers:{
+            'authorization': token,
             'Content-Type': 'application/json'
-        },
-        body:JSON.stringify({
-            quantidade: quantidadeAtualizada 
-        })
+        }
     })
 }
 
@@ -114,6 +123,7 @@ async function handleCreateItem(){
     await fetch(`${apiUrl}/produto`, {
         method: 'POST',
         headers:{
+            'authorization': token,
             'Content-Type': 'application/json'
         },
         body:JSON.stringify({
@@ -136,6 +146,7 @@ async function handleImportItemLote(){
     await fetch(`${apiUrl}/produto/${itemId}`, {
         method: 'PUT',
         headers:{
+            'authorization': token,
             'Content-Type': 'application/json'
         },
         body:JSON.stringify({
