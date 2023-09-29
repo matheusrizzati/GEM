@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEM - Estoque</title>
+    <link rel="stylesheet" href="estoque.css">
+
+    <!-- link-bootstrap -->
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="estoqueModalOver" id="estoqueCreateItemModal">
+        <div class="estoqueModalContainer">
+            <h2>Cadastrar item</h2>
+            <form>
+                <input type="text" placeholder="Nome do item" id="itemNome"/>
+                <input type="text" placeholder="Quantidade de itens" id="itemQuantidade"/>
+                <input type="text" placeholder="Preço item" id="itemValor"/>
+            </form>
+            <div class="estoqueModalContainerFooter">
+                <button class="createItemModalCancel">Cancelar</button>
+                <button onclick="handleCreateItem()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <div class="estoqueModalOver" id="estoqueLoteModal">
+        <div class="estoqueModalContainer">
+            <h2>Adicionar itens em lote</h2>
+            <form>
+                <select name="loteSelect" id="loteModalSelect">
+
+                </select>
+                <input type="number" id="loteItemQuantidade"/>
+            </form>
+            <div class="estoqueModalContainerFooter">
+                <button class="loteModalCancel">Cancelar</button>
+                <button onclick="handleImportItemLote()">Salvar</button>
+            </div>
+        </div>
+    </div>
+    <button id="EstoqueHandleButton">+</button>
+    <div style="display: none;"  id="estoqueFMenu">
+        <h4 id="estoqueCadastrarNovoButton">Cadastrar novo produto</h4>
+        <h4 id="estoqueAdicionarLoteButton">Adicionar em lote</h4>
+    </div>
+    <div class="estoqueHeader">
+        <h1>Controle de Estoque</h1>
+        <div class="EstoqueOrderByDiv">
+            <h3>Ordenar por:</h3>
+                <select name="orderShow" id="EstoqueOrderSelect">
+                    <option value="padrao">Padrão</option>
+                    <option value="maisItens">Itens: Mais primeiro</option>
+                    <option value="menosItens">Itens: Menos primeiro</option>
+                </select>
+        </div>
+    </div>
+    <ul class="estoqueContainer">
+        <!-- <li class="estoqueItem">
+            <h2 class="item1">Nome do Item</h2>
+            <h2 class="item2">R$ 10</h2>
+            <div class="item2">
+                <h2 id="estoqueMenos">-</h2>
+                <h2 class="estoqueItemCount" id="estoqueQuantidade">124</h2>
+                <h2 id="estoqueMais">+</h2>
+            </div>
+            <h2 class="item3">:</h2>
+        </li> -->
+    </ul>  
+</body>
+
+<script src="./estoque.js"></script>
+<!-- JavaScript (Opcional) -->
+<!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</html>

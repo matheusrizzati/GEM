@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- link-font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <title>GEM</title>
+
+    <style>
+
+        body {
+            padding-top: 56px;
+            overflow-x: hidden;
+            font-family: 'Farro', sans-serif;
+        }
+        .offcanvas-collapse {
+            position: fixed;
+            top: 56px;
+            bottom: 0;
+            right: 100%;
+            left: -300px;
+            width: 300px;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            overflow-y: auto;
+            visibility: hidden;
+            background-color:#B5C493;
+            transition-timing-function: ease-in-out;
+            transition-duration: .3s;
+            transition-property: left, visibility;
+        }
+
+        .offcanvas-collapse {
+            align-items: start;
+            -moz-background-clip: padding;
+            -webkit-background-clip: padding;
+            background-clip: padding-box;
+            border-right: 5px solid rgba(0, 0, 0, 0.2);
+
+        }
+
+        .offcanvas-collapse.open {
+            left: 0;
+            visibility: visible;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+        .nav-scroller .nav {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            color: rgba(255, 255, 255, .75);
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .nav-underline .nav-link {
+            padding-top: .75rem;
+            padding-bottom: .75rem;
+            font-size: .875rem;
+            color: #6c757d;
+        }
+
+        /* .nav-underline .nav-link:hover { 
+            color: #007bff;
+        } */ 
+
+        .nav-underline .active {
+            font-weight: 500;
+            color: #343a40;
+        }
+
+    </style>
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow navbar-dark navbar-offcanvas" style="background-color: #B5C493;">
+        <a class="navbar-brand mr-auto" href="#"></a>
+        <img class="img-fluid mr-auto" width="57" src="../public/img/gem-final.png" alt="">
+
+        <button class="navbar-toggler d-block border-0" type="button" id="navToggle">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" onclick="$('#conteudo').load('./components/financeiro/financeiro.html')">Financeiro<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="$('#conteudo').load('./components/estoque/estoque.html')">Estoque</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="$('#conteudo').load('./components/pedidos.html')">Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" onclick="$('#conteudo').load('./components/pdv.html')">PDV</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main id="conteudo">
+
+    </main>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+    console.log("document is ready");
+    $('[data-toggle="offcanvas"], #navToggle').on('click', function () {
+        $('.offcanvas-collapse').toggleClass('open')
+    })
+        });
+        window.onload = function () {
+            console.log("window is loaded");
+        };
+    </script>
+
+  </body>
+</html>

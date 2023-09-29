@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEM - PDV</title>
+    <link rel="stylesheet" href="pdv.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>PDV</h1>
+    </header>
+    <main>
+        <select id="pdvSelect">
+            <option>1</option>
+            <option>2</option>
+        </select>
+
+        <div class="pdvProductArea">
+            <ul class="pdvProductList">
+                <li>
+                    <h2 class="grid1">Bolinha de gude</h2>
+                    <h2>R$30,00</h2>
+                    <h2>- 10 +</h2>
+                    <h2 class="grid4">X</h2>
+                </li>
+            </ul>
+            <div class="pdvProductResume">
+                <h3>Total</h3>
+                <h3 id="pdvTotal">R$ 1024,20</h3>
+                <h3 id="pdvItens">15itens</h3>
+            </div>
+        </div>
+
+        <button id="pdvButton">Finalizar Pedido</button>
+    </main>
+</body>
+<script src="./pdv.js"></script>
+</html>

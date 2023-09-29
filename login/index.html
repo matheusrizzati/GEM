@@ -8,6 +8,11 @@
     <!--link-ico-->
     <link rel="shortcut icon" href="../public/gem-icon.ico" type="image/x-icon">
 
+    <!-- link-font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Farro:wght@300;400;500;700&display=swap" rel="stylesheet">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -23,13 +28,9 @@
             color: #fff;
         }
         /* body-formatação */
-        @font-face {
-            font-family: 'fonts-farro';
-            src: url(../fonts/Farro/Farro-Light.ttf);
-        }
         body{
             background-color: #e1e4d1;
-            font-family: 'fonts-farro';
+            font-family: 'Farro', sans-serif;
         }
 
     </style>
@@ -51,15 +52,15 @@
                     <input type="password" class="form-control" id="inputPassword" placeholder="Senha">
                     <!-- <label for="inputPassword">Senha</label> -->
                 </div>
-                <div class="checkbox mb-2">
+                <!-- <div class="checkbox mb-2">
                     <label>
-                        <input type="checkbox" value="lembrar-me">Lembrar-me
+                        <input type="checkbox" value="lembrar-me" id="stayConected">Lembrar-me
                     </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-outline-success" type="submit">Entrar</button>
+                </div> -->
+                <button class="w-100 btn btn-lg btn-outline-success" type="submit" id="submitBtn">Entrar</button>
                 <div id="criar-conta">
                 <label>Sem conta?</label>
-                <a href="../cadastro/index.html">crie uma</a>
+                <a href="../cadastro/">crie uma</a>
                 </div>
                 </form>
             </div>
@@ -71,5 +72,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </body>
+    <script src="./script.js"></script>
+</body>
 </html>
